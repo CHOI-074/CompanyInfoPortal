@@ -1,7 +1,7 @@
 # 🏢 CompanyInfoPortal
 
 공기업 및 사기업의 정보와 관련 게시글을 관리할 수 있는 통합 게시판 시스템입니다.  
-기업 분류, 상세 기업 정보, 사용자 게시글, 첨부파일 기능을 포함하며, 추후 사용자/댓글 시스템으로 확장 가능합니다.
+기업 분류, 상세 기업 정보, 사용자 게시글 작성을 포함하며, 추후 사용자/댓글 시스템으로 확장 예정입니다.
 
 ---
 
@@ -10,7 +10,7 @@
 - ✅ 공기업 / 사기업 분류 등록
 - ✅ 기업 정보 등록 / 수정 / 조회
 - ✅ 기업별 게시글 CRUD
-- ✅ 게시글 첨부파일 업로드 및 조회
+- ✅ 게시글 업로드 및 조회
 - 🔄 추후 댓글 및 사용자 인증 기능 연동 가능
 
 ---
@@ -19,10 +19,10 @@
 
 | 구분 | 기술 |
 |------|------|
-| Language | Java 11 |
+| Language | Java 8 |
 | Framework | Spring Framework (MVC) |
 | ORM | MyBatis |
-| DB | MySQL or H2 (선택) |
+| DB | MySQL  |
 | Build Tool | Gradle |
 | API Test | Postman |
 | Version Control | Git, GitHub |
