@@ -30,12 +30,12 @@
 
 ## 🏛️ ERD 구조 (4개 테이블)
 
-1. `company_type` – 기업 유형 (공기업 / 사기업)
-2. `company` – 개별 기업 정보
-3. `post` – 게시글
-4. `attachment` – 게시글 첨부파일
+1. `company` – 기업 정보
+2. `CompanyDetail` – 기업 상세 정보
+3. `User` – 회원 정보
+4. `Post` – 게시글 
 
-추후 `comment`, `user` 테이블 확장 고려 가능
+추후 `comment` 테이블 확장 고려 가능
 
 ---
 
