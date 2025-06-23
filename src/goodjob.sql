@@ -17,6 +17,14 @@ CREATE TABLE company (
                          url VARCHAR(255)
 );
 
+CREATE TABLE company_detail (
+                                id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                                company_id BIGINT NOT NULL UNIQUE,
+                                description TEXT,
+                                created_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+                                FOREIGN KEY (company_id) REFERENCES company(id)
+);
+
 # 더미데이터
 INSERT INTO post (title, created_date, writer, user_id)
 VALUES
@@ -33,3 +41,11 @@ VALUES
     ('한국도로공사', '공기업', '도로 및 교통', 'https://www.ex.co.kr'),
     ('네이버', '사기업', 'IT / 포털 서비스', 'https://www.naver.com'),
     ('한국수자원공사', '공기업', '수자원 관리', 'https://www.kwater.or.kr');
+
+INSERT INTO company_detail (company_id, description)
+VALUES
+    (1, '대한민국을 대표하는 전력 공급 공기업입니다. 전력 인프라를 책임지고 있습니다.'),
+    (2, '글로벌 전자제품 제조업체로, 반도체 및 스마트폰 분야의 리더입니다.'),
+    (3, '도로 및 교통 인프라를 관리하며 고속도로 운영을 책임지는 공기업입니다.'),
+    (4, '대한민국 대표 포털 사이트 운영사로 다양한 IT 서비스를 제공합니다.'),
+    (5, '국내 수자원 관리 및 홍수 예방 등의 역할을 하는 공공기관입니다.');
