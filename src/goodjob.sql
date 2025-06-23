@@ -9,6 +9,14 @@ CREATE TABLE post
     user_id      BIGINT
 );
 
+CREATE TABLE company (
+                         id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                         name VARCHAR(100) NOT NULL,
+                         type VARCHAR(20) NOT NULL,         -- 공기업 / 사기업
+                         industry VARCHAR(100),
+                         url VARCHAR(255)
+);
+
 # 더미데이터
 INSERT INTO post (title, created_date, writer, user_id)
 VALUES
@@ -17,3 +25,11 @@ VALUES
 ('공기업 vs 사기업 선택 기준', '2025-06-10 09:45:00', '김철수', 3),
 ('2025 상반기 합격 후기 모음', '2025-06-15 18:20:00', '박지은', 1),
 ('사기업 취업을 위한 준비 팁', '2025-06-18 11:10:00', '정우성', 2);
+
+INSERT INTO company (name, type, industry, url)
+VALUES
+    ('한국전력공사', '공기업', '전기 에너지', 'https://www.kepco.co.kr'),
+    ('삼성전자', '사기업', '전자 제품 제조', 'https://www.samsung.com'),
+    ('한국도로공사', '공기업', '도로 및 교통', 'https://www.ex.co.kr'),
+    ('네이버', '사기업', 'IT / 포털 서비스', 'https://www.naver.com'),
+    ('한국수자원공사', '공기업', '수자원 관리', 'https://www.kwater.or.kr');
