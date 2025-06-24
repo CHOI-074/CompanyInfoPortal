@@ -25,6 +25,15 @@ CREATE TABLE company_detail (
                                 FOREIGN KEY (company_id) REFERENCES company(id)
 );
 
+CREATE TABLE user (
+                      id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                      user_id VARCHAR(50) NOT NULL UNIQUE,
+                      password VARCHAR(200) NOT NULL,
+                      name VARCHAR(100) NOT NULL,
+                      nickname VARCHAR(50) NOT NULL
+);
+
+
 # 더미데이터
 INSERT INTO post (title, created_date, writer, user_id)
 VALUES
@@ -49,3 +58,10 @@ VALUES
     (3, '도로 및 교통 인프라를 관리하며 고속도로 운영을 책임지는 공기업입니다.'),
     (4, '대한민국 대표 포털 사이트 운영사로 다양한 IT 서비스를 제공합니다.'),
     (5, '국내 수자원 관리 및 홍수 예방 등의 역할을 하는 공공기관입니다.');
+
+INSERT INTO user (user_id, password, name, nickname) VALUES
+    ('hong123', 'password1!', '홍길동', '길동이'),
+    ('lee789', 'password2@', '이영희', '영희공주'),
+    ('kim456', 'password3#', '김철수', '철수짱'),
+    ('parkjm', 'password4$', '박지은', '지은짱'),
+    ('jungwoo', 'password5%', '정우성', '우성오빠');
