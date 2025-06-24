@@ -1,0 +1,26 @@
+<mapper namespace="com.example.mapper.CompanyMapper">
+
+    <insert id="insertCompany" parameterType="CompanyDTO">
+        INSERT INTO company (name, type, industry, url)
+        VALUES (#{name}, #{type}, #{industry}, #{url});
+    </insert>
+
+    <select id="findAllCompanny" resultType="CompanyDTO">
+        SELECT * FROM company;
+    </select>
+
+    <select id="findCompanyById" parameterType="long" resultType="CompanyDTO">
+        SELECT * FROM company WHERE id = #{id};
+    </select>
+
+    <update id="updateCompany" parameterType="CompanyDTO">
+        UPDATE company
+        SET name = #{name}, type = #{type}, industry = #{industry}, url = #{url}
+        WHERE id = #{id};
+    </update>
+
+    <delete id="deleteCompany" parameterType="long">
+        DELETE FROM company WHERE id = #{id};
+    </delete>
+
+</mapper>
