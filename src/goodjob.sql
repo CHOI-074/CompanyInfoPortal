@@ -33,6 +33,16 @@ CREATE TABLE user (
                       nickname VARCHAR(50) NOT NULL
 );
 
+ALTER TABLE post
+DROP COLUMN writer;
+
+ALTER TABLE post
+ADD CONSTRAINT fk_post_user
+FOREIGN KEY (user_id)
+REFERENCES user(id)
+ON DELETE CASCADE;
+
+
 
 # 더미데이터
 INSERT INTO post (title, created_date, writer, user_id)
@@ -65,3 +75,9 @@ INSERT INTO user (user_id, password, name, nickname) VALUES
     ('kim456', 'password3#', '김철수', '철수짱'),
     ('parkjm', 'password4$', '박지은', '지은짱'),
     ('jungwoo', 'password5%', '정우성', '우성오빠');
+
+
+SELECT p.id, p.title, u.name AS writer, p.created_date
+FROM post p
+JOIN user u ON p.user_id = u.id;
+
