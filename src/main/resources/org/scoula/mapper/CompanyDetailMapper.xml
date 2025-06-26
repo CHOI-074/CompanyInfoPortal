@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.scoula.mapper.CompanyDetailMapper">
+
+    <resultMap id="CompanyDetailMap" type="org.scoula.dto.CompanyDetailDTO">
+        <id property="id" column="id"/>
+        <result property="companyId" column="company_id"/>
+        <result property="description" column="description"/>
+        <result property="createdDate" column="created_date"/>
+    </resultMap>
+
+    <select id="getAllDetails" resultMap="CompanyDetailMap">
+        SELECT * FROM company_detail
+    </select>
+
+    <select id="getDetailByCompanyId" resultMap="CompanyDetailMap">
+        SELECT * FROM company_detail WHERE company_id = #{companyId}
+    </select>
+
+    <insert id="insertCompanyDetail">
+        INSERT INTO company_detail (company_id, description)
+        VALUES (#{companyId}, #{description})
+    </insert>
+
+    <update id="updateCompanyDetail">
+        UPDATE company_detail
+        SET description = #{description}
+        WHERE company_id = #{companyId}
+    </update>
+
+    <delete id="deleteCompanyDetail">
+        DELETE FROM company_detail WHERE company_id = #{companyId}
+    </delete>
+
+</mapper>
