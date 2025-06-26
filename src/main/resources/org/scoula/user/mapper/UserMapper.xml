@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.scoula.user.mapper.UserMapper">
+
+    <insert id="insertUser" parameterType="org.scoula.user.dto.UserDTO">
+        INSERT INTO user (user_id, password, name, nickname)
+        VALUES (#{userId}, #{password}, #{name}, #{nickname})
+    </insert>
+
+    <select id="selectUserById" parameterType="long" resultType="org.scoula.user.dto.UserDTO">
+        SELECT id, user_id, password, name, nickname
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+    <update id="updateUser" parameterType="org.scoula.user.dto.UserDTO">
+        UPDATE user
+        SET user_id = #{userId},
+            password = #{password},
+            name = #{name},
+            nickname = #{nickname}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="long">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+
+</mapper>
