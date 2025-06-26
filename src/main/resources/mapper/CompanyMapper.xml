@@ -1,26 +1,31 @@
-<mapper namespace="com.example.mapper.CompanyMapper">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-    <insert id="insertCompany" parameterType="CompanyDTO">
+<mapper namespace="org.scoula.mapper.CompanyMapper">
+
+<insert id="insertCompany" parameterType="org.scoula.dto.CompanyDTO">
         INSERT INTO company (name, type, industry, url)
-        VALUES (#{name}, #{type}, #{industry}, #{url});
+        VALUES (#{name}, #{type}, #{industry}, #{url})
     </insert>
 
-    <select id="findAllCompanies" resultType="CompanyDTO">
-        SELECT * FROM company;
+    <select id="findAllCompanies" resultType="org.scoula.dto.CompanyDTO">
+        SELECT * FROM company
     </select>
 
-    <select id="findCompanyById" parameterType="long" resultType="CompanyDTO">
-        SELECT * FROM company WHERE id = #{id};
+    <select id="findCompanyById" parameterType="long" resultType="org.scoula.dto.CompanyDTO">
+        SELECT * FROM company WHERE id = #{id}
     </select>
 
-    <update id="updateCompany" parameterType="CompanyDTO">
+    <update id="updateCompany" parameterType="org.scoula.dto.CompanyDTO">
         UPDATE company
         SET name = #{name}, type = #{type}, industry = #{industry}, url = #{url}
-        WHERE id = #{id};
+        WHERE id = #{id}
     </update>
 
     <delete id="deleteCompany" parameterType="long">
-        DELETE FROM company WHERE id = #{id};
+        DELETE FROM company WHERE id = #{id}
     </delete>
 
 </mapper>
