@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController // REST API 응답 반환 (@ResponseBody 포함)
-@RequestMapping("/api/posts") // 모든 경로 앞에 /api/posts 포함
+@RequestMapping("/api/posts")
 @RequiredArgsConstructor
 public class PostController {
 
