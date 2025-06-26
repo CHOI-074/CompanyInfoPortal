@@ -70,11 +70,11 @@ VALUES
     (5, '국내 수자원 관리 및 홍수 예방 등의 역할을 하는 공공기관입니다.');
 
 INSERT INTO user (user_id, password, name, nickname) VALUES
-                                                         ('hong123', 'password1!', '홍길동', '길동이'),
-                                                         ('lee789', 'password2@', '이영희', '영희공주'),
-                                                         ('kim456', 'password3#', '김철수', '철수짱'),
-                                                         ('parkjm', 'password4$', '박지은', '지은짱'),
-                                                         ('jungwoo', 'password5%', '정우성', '우성오빠');
+('hong123', 'password1!', '홍길동', '길동이'),
+('lee789', 'password2@', '이영희', '영희공주'),
+('kim456', 'password3#', '김철수', '철수짱'),
+('parkjm', 'password4$', '박지은', '지은짱'),
+('jungwoo', 'password5%', '정우성', '우성오빠');
 
 
 SELECT p.id, p.title, u.name AS writer, p.created_date
