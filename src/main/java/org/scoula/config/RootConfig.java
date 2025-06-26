@@ -17,6 +17,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
+
 @ComponentScan(basePackages = "org.scoula")
 @MapperScan(basePackages = "org.scoula.mapper")
 @PropertySource({"classpath:/application.properties"})
