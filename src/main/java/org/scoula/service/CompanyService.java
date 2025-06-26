@@ -3,9 +3,11 @@ package org.scoula.service;
 import org.scoula.dto.CompanyDTO;
 import org.scoula.mapper.CompanyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CompanyService {
 
     @Autowired

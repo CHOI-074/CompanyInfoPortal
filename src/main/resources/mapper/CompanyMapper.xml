@@ -5,7 +5,7 @@
         VALUES (#{name}, #{type}, #{industry}, #{url});
     </insert>
 
-    <select id="findAllCompanny" resultType="CompanyDTO">
+    <select id="findAllCompanies" resultType="CompanyDTO">
         SELECT * FROM company;
     </select>
 
