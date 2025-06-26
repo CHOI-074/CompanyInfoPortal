@@ -1,8 +1,10 @@
 package org.scoula.service;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.scoula.dto.CompanyDetailDTO;
 
 import java.util.List;
+
 
 public interface CompanyDetailService {
     List<CompanyDetailDTO> getAllDetails();

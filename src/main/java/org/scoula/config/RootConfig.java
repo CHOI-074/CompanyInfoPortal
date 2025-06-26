@@ -17,7 +17,10 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource({"classpath:/application.properties"})
-@MapperScan(basePackages = "org.scoula.user.mapper")
+@MapperScan(basePackages = {
+        "org.scoula.mapper",
+        "org.scoula.user.mapper"
+})
 public class RootConfig {
     @Value("${jdbc.driver}")
     String driver;

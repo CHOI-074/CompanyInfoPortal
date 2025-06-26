@@ -1,9 +1,12 @@
 package org.scoula.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.scoula.dto.CompanyDetailDTO;
 
 import java.util.List;
 
+
+@Mapper
 public interface CompanyDetailMapper {
     List<CompanyDetailDTO> getAllDetails();  // 전체 조회
     CompanyDetailDTO getDetailByCompanyId(Long companyId);  // 회사ID로 조회
