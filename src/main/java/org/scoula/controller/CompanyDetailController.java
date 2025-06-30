@@ -40,7 +40,7 @@ public class CompanyDetailController {
     // 수정
     @PutMapping("/{companyId}")
     public ResponseEntity<String> update(@PathVariable Long companyId, @RequestBody CompanyDetailDTO dto) {
-        dto.setCompanyId(companyId);  // URL 값과 DTO 동기화
+        dto.setCompanyId(companyId);  // URL 값과 dto 동기화
         service.updateCompanyDetail(dto);
         return ResponseEntity.ok("수정 성공");
     }

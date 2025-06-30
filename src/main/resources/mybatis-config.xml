@@ -9,14 +9,14 @@
         <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
 
-    <!-- DTO 위치 등록 -->
+    <!-- dto 위치 등록 -->
     <typeAliases>
         <package name="org.scoula.dto"/>
     </typeAliases>
 
     <!-- Mapper XML 파일 등록 -->
-    <mappers>
-        <mapper resource="mapper/CompanyMapper.xml"/>
-    </mappers>
+<!--    <mappers>-->
+<!--      <mapper resource="mapper/CompanyMapper.xml"/>-->
+<!--    </mappers>-->
 
 </configuration>

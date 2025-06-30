@@ -19,9 +19,12 @@ import javax.sql.DataSource;
 @Configuration
 
 @ComponentScan(basePackages = "org.scoula")
-@MapperScan(basePackages = "org.scoula.mapper")
+@MapperScan(basePackages = {
+        "org.scoula.mapper",
+        "org.scoula.user.mapper"
+})
 @PropertySource({"classpath:/application.properties"})
-@MapperScan(basePackages = "org.scoula.user.mapper")
+
 public class RootConfig {
     @Value("${jdbc.driver}")
     String driver;
@@ -57,7 +60,7 @@ public class RootConfig {
         sqlSessionFactory.setConfigLocation(applicationContext.getResource("classpath:/mybatis-config.xml"));
         sqlSessionFactory.setDataSource(dataSource());
 
-        sqlSessionFactory.setMapperLocations(applicationContext.getResources("classpath:/mapper/*.xml"));
+        //sqlSessionFactory.setMapperLocations(applicationContext.getResources("classpath:/org/scoula/mapper/**/*.xml"));
         return (SqlSessionFactory) sqlSessionFactory.getObject();
     }
 
