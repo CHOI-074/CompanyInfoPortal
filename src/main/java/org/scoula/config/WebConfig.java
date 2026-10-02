@@ -10,7 +10,7 @@ import javax.servlet.ServletRegistration;
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     // OS에 맞게 경로 변경 필요함 - 멀티 파트 관련
-    final String LOCATION = "C:/upload";
+    final String LOCATION = System.getProperty("java.io.tmpdir");
     final long MAX_FILE_SIZE = 1024 * 1024 * 10L;
     final long MAX_REQUEST_SIZE = 1024 * 1024 * 20L;
     final int FILE_SIZE_THRESHOLD = 1024 * 1024 * 5;

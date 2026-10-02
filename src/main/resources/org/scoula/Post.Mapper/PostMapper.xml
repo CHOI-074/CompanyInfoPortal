@@ -6,7 +6,7 @@
 <mapper namespace="org.scoula.mapper.PostMapper">
 
     <!-- 게시글 등록 -->
-    <insert id="insert" parameterType="org.scoula.domain.PostVO">
+    <insert id="insert" parameterType="org.scoula.domain.PostVO" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO post (title, created_date, writer, user_id)
         VALUES (#{title}, NOW(), #{writer}, #{userId})
     </insert>

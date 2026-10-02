@@ -9,7 +9,7 @@ public interface UserMapper {
 
     UserDTO selectUserById(Long id);
 
-    void updateUser(UserDTO dto);
+    int updateUser(UserDTO dto);
 
-    void deleteUser(Long id);
+    int deleteUser(Long id);
 }

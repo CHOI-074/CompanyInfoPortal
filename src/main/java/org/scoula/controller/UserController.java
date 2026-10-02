@@ -21,18 +21,17 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUser(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUserById(id));
+        UserDTO user = userService.getUserById(id);
+        return user == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(user);
     }
 
     @PutMapping
     public ResponseEntity<Void> update(@RequestBody UserDTO dto) {
-        userService.updateUser(dto);
-        return ResponseEntity.ok().build();
+        return userService.updateUser(dto) ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-        userService.deleteUser(id);
-        return ResponseEntity.ok().build();
+        return userService.deleteUser(id) ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 }
